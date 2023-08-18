@@ -26,7 +26,7 @@ class PizdaFilter(MessageFilter):
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await context.bot.send_message(chat_id=update.effective_chat.id, text='Привет, это я, Филип Киркоров!')
+    await context.bot.send_message(chat_id=update.effective_chat.id, text='Привет, это я, Филипп Киркоров!')
 
 
 async def pizda(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
