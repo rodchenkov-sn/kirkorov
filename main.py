@@ -1,10 +1,10 @@
 import logging
+import os
 import re
-from os import environ
 from typing import Optional, Union
 
 from telegram import Update, Message
-from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler, filters
+from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler, MessageHandler
 from telegram.ext._utils.types import FilterDataDict
 from telegram.ext.filters import MessageFilter
 
@@ -38,7 +38,7 @@ async def pizda(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 
 
 if __name__ == '__main__':
-    application = ApplicationBuilder().token(environ['BOT_TOKEN']).build()
+    application = ApplicationBuilder().token(os.environ['TOKEN']).build()
 
     start_handler = CommandHandler('start', start, block=False)
     pizda_handler = MessageHandler(PizdaFilter(), pizda, block=False)
